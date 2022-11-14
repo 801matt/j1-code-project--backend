@@ -5,6 +5,8 @@ const breaches = require("./Routes/breaches");
 
 const app = express();
 
+app.set("port", process.env.PORT || 80);
+
 app.use(bodyParser.json());
 
 app.use(cors());
