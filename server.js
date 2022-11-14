@@ -5,7 +5,7 @@ const breaches = require("./Routes/breaches");
 
 const app = express();
 
-app.set("port", process.env.PORT || 80);
+app.use(express.static("public"));
 
 app.use(bodyParser.json());
 
@@ -13,4 +13,6 @@ app.use(cors());
 
 app.use(breaches);
 
-app.listen(4000, () => console.log("Example app is listening on port 4000."));
+app.listen(process.env.PORT || 3000, () =>
+  console.log("Server is running on port 3000")
+);
